@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Todas as compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	 <ion-card class="holder-item-lancado" *ngFor="let Compra of ListaCompra; ">
+	 	<ion-grid>
+				<ion-grid>
+					<ion-card-header>
+						<ion-grid>
+						    <ion-col>
+						    	<ion-label>{{Compra.mercado}} - {{this.utils.acertaData(Compra.data, 1)}} </ion-label>
+						    </ion-col>
+						</ion-grid>
+					</ion-card-header>
+				</ion-grid>
+				
+				<ion-grid>
+					<ion-card-header>
+						<ion-row>
+						          <ion-col size="12">
+						            <table width="100%" class="tb-wis">
+						              <thead>
+						                <tr>
+						                  <th align="left">Item</th>
+						                  <th align="center">Valor</th>
+						                </tr>
+						              </thead>
+						              <tbody>
+						                <tr *ngFor="let item of Compra.itens;">
+						                  <td align="left">{{item.item}}</td>
+						                  <td align="center">{{item.valor}}</td>
+						                </tr>
+						              </tbody>
+						            </table>
+						          </ion-col>
+						 </ion-row>
+				    </ion-card-header>		
+				</ion-grid>
+		</ion-grid>
+	  </ion-card>
+</ion-content>

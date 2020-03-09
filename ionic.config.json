@@ -1,6 +1,8 @@
 {
   "name": "market_list",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "5faf24e6"
 }
