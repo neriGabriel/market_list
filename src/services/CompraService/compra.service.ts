@@ -11,7 +11,7 @@ export class CompraService {
 	  .then((msg) => console.log('SUCESSO ao iniciar cookies de compra. MSG: '+msg))
 	  .catch((msg) => console.log('ERRO ao iniciar cookies de compra. MSG: '+msg));
   }
-  
+
   private initCompra() {
   	return new Promise((resolve, reject) => {
   	  this.storage.get('compra')
@@ -28,7 +28,7 @@ export class CompraService {
   	  });
   	});
   }
-  
+
   getAll() {
       return new Promise((resolve, reject) => {
         this.storage.get('compra').then((val) => {
@@ -40,7 +40,7 @@ export class CompraService {
           });
       });
     }
-  
+
   insert(encodedCompra) {
       return new Promise((resolve, reject) => {
         this.storage.get('compra').then(() => {
@@ -55,12 +55,18 @@ export class CompraService {
         });
       });
   }
-  
+
   async findByMercadoDataLancamento(mercado, data) {
 	  let compra = {};
 	  await this.getAll().then((response: any[]) => {
 	      compra = response.find(Compra => Compra.mercado == mercado && Compra.data == data);
 	  });
 	  return compra;
+  }
+
+
+  async getAll2(): Promise<[]> {
+    let teste = await this.storage.get('compra');
+    return JSON.parse(teste);
   }
 }

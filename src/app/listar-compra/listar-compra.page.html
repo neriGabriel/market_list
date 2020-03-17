@@ -5,7 +5,51 @@
 </ion-header>
 
 <ion-content padding>
-	 <ion-card class="holder-item-lancado" *ngFor="let Compra of ListaCompra; ">
+
+  <ion-card *ngFor="let Compra of ListaCompra; ">
+    <ion-card-header>
+      <ion-card-title>{{Compra.mercado.toUpperCase()}}</ion-card-title>
+      <ion-card-subtitle>{{this.utils.acertaData(Compra.data, 1)}}</ion-card-subtitle>
+    </ion-card-header>
+
+     <ion-grid>
+       <ion-row>
+
+         <ion-col>
+             <ion-item>
+               <ion-icon name="cash-outline" slot="end"></ion-icon>
+               <ion-label>{{Compra.valorTotal}}</ion-label>
+             </ion-item>
+         </ion-col>
+
+         <ion-col>
+             <ion-item>
+               <ion-icon name="cube-outline" slot="end"></ion-icon>
+               <ion-label>{{Compra.qtdeItem}}</ion-label>
+             </ion-item>
+         </ion-col>
+
+         <ion-col>
+             <ion-item>
+               <ion-label>{{Compra.mediaItem}}</ion-label>
+               <ion-icon name="stats-chart-outline" slot="end"></ion-icon>
+            </ion-item>
+         </ion-col>
+
+       </ion-row>
+     </ion-grid>
+
+
+
+
+    <ion-item>
+      <ion-button fill="outline" slot="end">Mais</ion-button>
+    </ion-item>
+
+  </ion-card>
+
+
+	<!--<ion-card class="holder-item-lancado" *ngFor="let Compra of ListaCompra; ">
 	 	<ion-grid>
 				<ion-grid>
 					<ion-card-header>
@@ -16,9 +60,10 @@
 						</ion-grid>
 					</ion-card-header>
 				</ion-grid>
-				
+
 				<ion-grid>
-					<ion-card-header>
+
+				<ion-card-header>
 						<ion-row>
 						          <ion-col size="12">
 						            <table width="100%" class="tb-wis">
@@ -37,8 +82,8 @@
 						            </table>
 						          </ion-col>
 						 </ion-row>
-				    </ion-card-header>		
+				    </ion-card-header>
 				</ion-grid>
 		</ion-grid>
-	  </ion-card>
+	  </ion-card>-->
 </ion-content>
