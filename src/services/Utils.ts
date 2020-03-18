@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Utils {
-    constructor() {}
+    constructor(public alertCtr: AlertController) {}
 
 	/*
 	 * @params: data => E.G => new Date().toISOString();
@@ -50,4 +51,16 @@ export class Utils {
     valorFinal = valorFinal.replace(" ", "");
     return valorFinal;
   }
+
+  async showAlert(header, subHeader, message, buttons) {
+    const alert = await this.alertCtr.create({
+      header: header,
+      subHeader: subHeader,
+      message: message,
+      buttons: buttons,
+
+    });
+    return await alert.present();
+  }
+
 }

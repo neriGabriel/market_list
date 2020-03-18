@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CompraService } from '../../services/CompraService/compra.service';
 import { Utils } from '../../services/Utils'
+import { ModalController, LoadingController, NavParams, Platform } from '@ionic/angular';
+import { InfoCompraPage } from '../info-compra/info-compra.page';
+
 
 @Component({
   selector: 'app-listar-compra',
@@ -10,7 +13,7 @@ import { Utils } from '../../services/Utils'
 export class ListarCompraPage implements OnInit {
 
   ListaCompra = [];
-  constructor(public utils: Utils, public compraSerivce : CompraService) { }
+  constructor(public utils: Utils, public compraSerivce : CompraService, public modalController: ModalController) { }
 
   ngOnInit() {
   }
@@ -36,6 +39,11 @@ export class ListarCompraPage implements OnInit {
         this.ListaCompra.push(arrayComp);
       });
   }
-
+ async abreModal() {
+   const modal = await this.modalController.create({
+       component: InfoCompraPage
+     });
+  return await modal.present();
+ }
 
 }

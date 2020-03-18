@@ -15,8 +15,8 @@ import { NovaCompraPage } from './nova-compra.page';
     CommonModule,
     FormsModule,
     IonicModule,
-	BrMaskerModule,
-	NovaCompraPageRoutingModule
+  	BrMaskerModule,
+  	NovaCompraPageRoutingModule
   ],
   declarations: [NovaCompraPage]
 })

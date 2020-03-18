@@ -57,7 +57,9 @@ export class NovaCompraPage implements OnInit {
 	  });
 
 	  await this.compraSerivce.insert(JSON.stringify(compraItem))
-	  .then((msg) => console.log('SUCESSO'))
+	  .then((msg) => this.utils.showAlert('Alerta', '', 'Cadastro realizado com sucesso!', ['OK']))
 	  .catch((msg) => console.log('ERROR'))
   }
+
+
 }

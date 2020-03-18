@@ -13,6 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { BrMaskerModule } from 'br-mask';
 
+
+import { InfoCompraPageModule } from './info-compra/info-compra.module';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -20,8 +23,9 @@ import { BrMaskerModule } from 'br-mask';
  	BrMaskerModule,
     BrowserModule,
     IonicModule.forRoot(),
-	IonicStorageModule.forRoot(),
-    AppRoutingModule
+	  IonicStorageModule.forRoot(),
+    AppRoutingModule,
+    InfoCompraPageModule
   ],
   providers: [
     StatusBar,
