@@ -39,10 +39,15 @@ export class ListarCompraPage implements OnInit {
         this.ListaCompra.push(arrayComp);
       });
   }
- async abreModal() {
+ async abreModal(Compra) {
    const modal = await this.modalController.create({
-       component: InfoCompraPage
-     });
+       component: InfoCompraPage,
+       componentProps: Compra
+   });
+  modal.onDidDismiss()
+  .then( (res) => {
+    console.log('teste');
+  })
   return await modal.present();
  }
 

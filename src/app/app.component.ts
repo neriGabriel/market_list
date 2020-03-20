@@ -42,19 +42,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  ionViewWillEnter() {
-    console.log(1);
-  }
-  ionViewDidEnter() {
-    console.log(2);
-  }
-  ionViewWillLeave() {
-    console.log(3);
-  }
-  ionViewDidLeave() {
-    console.log(4);
-  }
-
   async ngOnInit() {
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
