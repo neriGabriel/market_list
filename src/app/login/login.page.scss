@@ -1,0 +1,29 @@
+$height100: 100%;
+
+ion-grid, form {
+  width:100%;
+  height: $height100;
+}
+
+ion-row {
+  height: $height100;
+}
+
+ion-col {
+}
+
+ion-button {
+  font-weight: 300;
+  background-color: #0064A0;
+  border-radius: 5px;
+}
+
+ion-input {
+  text-transform: uppercase;
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+  ion-col {
+      border: none;
+  }
+}
